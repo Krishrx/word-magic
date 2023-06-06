@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width:100vw;
+    height:100vh;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+header h1{
+    margin: 10px;
+}
+.nav-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 50%;
+    align-items:start;
+    align-content: center;
+    /* border: 1px solid black; */
+}
+.nav{
+    flex: 0.5;
+    margin-left: 0.5em;
+    flex-basis: auto;
+    /* border: 1px solid black; */
+}
+.nav p{
+    padding: 0.2em;
+}
