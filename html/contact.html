@@ -75,22 +75,20 @@
     </div>
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent form submission
+          event.preventDefault(); 
     
-          // Collect form data
           var formData = {
             to_name: "Kali Krishna",
             from_name: document.getElementById('name').value,
             message: document.getElementById('message').value,
             reply_to: document.getElementById('email').value
           };
-    
-          // Send form data via EmailJS
+
           emailjs.send('service_yvt2yum', 'template_vkgy9qy', formData)
             .then(function(response) {
               console.log('SUCCESS!', response.status, response.text);
               alert('Form data submitted successfully!');
-              document.getElementById('contactForm').reset(); // Clear the form
+              document.getElementById('contactForm').reset(); 
             }, function(error) {
               console.log('FAILED...', error);
               alert('Form data submission failed. Please try again.');
