@@ -38,8 +38,13 @@
             <span id="close-btn"><i class="fa fa-close" style="font-size:24px"></i></span>
         </div>
 
-        <div>
-            
+        <div class="countWords">
+            <div class="para-textarea">
+                <textarea id="textArea" oninput="countWordsAndChars()"></textarea>
+            </div>
+            <div>
+                <h3><span id="wordCount">0</span> Words <span id="charCount">0</span> Characters <span id="spaceCount">0</span> WhiteSpaces</h3>
+            </div>
         </div>
 
         <div class="footer">

@@ -66,6 +66,11 @@ body{
     top: 0;
     transition: left 0.5s ease; 
   }
+
+  .nav a{
+    display: block;
+    padding-left: 50px;
+  }
   
   #navList{
     cursor: pointer;
@@ -142,6 +147,15 @@ body{
     background-color: #B19CD9;
   }
   
+  .box div button,.removeWordsResult button,.readPara button{
+    color: white;
+    background-color:#ff3737;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: #ff3737;
+    cursor: pointer;
+  }
+
   .box div button{
     color: white;
     background-color:#ff3737;
@@ -151,12 +165,19 @@ body{
     cursor: pointer;
   }
 
-  .box div button:hover{
+  .readPara button,.removeWordsResult button:hover{
     background-color: greenyellow;
     border-color: greenyellow;
     color: black;
     font-weight: bold;
   }
+
+   .box div button:hover{
+    background-color: greenyellow;
+    border-color: greenyellow;
+    color: black;
+    font-weight: bold;
+  } 
   
 .footer i{
     margin: 10px;
@@ -200,3 +221,87 @@ body{
     margin-bottom: 0;
     padding-bottom: 10px;
 }
+
+
+.countWords,.removeWords,.readPara{
+    margin: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.para-textarea textarea,.removeWords textarea,.readPara  textarea{
+    width: 90%;
+    height: 300px;
+    padding: 10px;
+}
+
+.removeWordsResult{
+    margin: 10px;
+    padding: 10px;
+}
+
+.removeWordsResult input{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.readPara button{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .action-button {
+    margin: 0 10px;
+  }
+
+.contactUs{
+    margin: 20px;
+    padding: 20px;
+    margin-bottom:145px;
+}
+
+  label {
+    display: inline-block;
+    width: 100px; 
+    font-weight: bold;
+  }
+
+  .contactUs input,.contactUs textarea{
+    padding: 5px;
+  }
+  
+  #contact-submit{
+    color: white;
+    background-color:#ff3737;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: #ff3737;
+    cursor: pointer;
+    margin-left: 50%;
+  }
+
+#contact-submit:hover{
+    background-color: greenyellow;
+    border-color: greenyellow;
+    color: black;
+    font-weight: bold;
+  }
+
+
+  .contactUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ /* Adjust this if needed */
+  }
+  
+
+  

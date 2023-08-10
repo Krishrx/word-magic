@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("MzWvQQBeSdeIeUMCg");
+   })();
+</script>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="manifest" href="/images/site.webmanifest">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 </head>
 <body>
     <div class="container">
@@ -38,8 +45,19 @@
             <span id="close-btn"><i class="fa fa-close" style="font-size:24px"></i></span>
         </div>
 
-        <div>
+        <div class="contactUs">
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required><br><br>
             
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required><br><br>
+            
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea><br><br>
+            
+                <input type="submit" id="contact-submit" value="Send">
+              </form>
         </div>
 
         <div class="footer">
@@ -55,7 +73,30 @@
         </div>
 
     </div>
-
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+    
+          // Collect form data
+          var formData = {
+            to_name: "Kali Krishna",
+            from_name: document.getElementById('name').value,
+            message: document.getElementById('message').value,
+            reply_to: document.getElementById('email').value
+          };
+    
+          // Send form data via EmailJS
+          emailjs.send('service_yvt2yum', 'template_vkgy9qy', formData)
+            .then(function(response) {
+              console.log('SUCCESS!', response.status, response.text);
+              alert('Form data submitted successfully!');
+              document.getElementById('contactForm').reset(); // Clear the form
+            }, function(error) {
+              console.log('FAILED...', error);
+              alert('Form data submission failed. Please try again.');
+            });
+        });
+      </script>
     <script src="/js/script.js"></script>
 </body>
 </html>

@@ -38,9 +38,17 @@
             <span id="close-btn"><i class="fa fa-close" style="font-size:24px"></i></span>
         </div>
 
-        <div>
-            
-        </div>
+        <div class="readPara">
+            <div class="para-textarea">
+              <textarea id="textArea"></textarea>
+            </div>
+            <div class="button-container">
+              <button id="readButton" class="action-button" onclick="toggleSpeech()">Read Out</button>
+              <button id="pauseButton" class="action-button" onclick="pauseSpeech()" style="display: none;">Pause</button>
+              <button id="resumeButton" class="action-button" onclick="resumeSpeech()" style="display: none;">Resume</button>
+            </div>
+            <input style="margin-top: 10px;" type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+        </div> 
 
         <div class="footer">
             <a href="https://github.com/Krishrx/"><i class="fa-brands fa-github fa-2x"></i></a>
