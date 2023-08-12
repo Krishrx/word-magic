@@ -39,7 +39,7 @@ function removeWords() {
 
     let modifiedText = inputText;
     wordsToRemove.forEach(word => {
-        const regex = new RegExp(`\\b${word}\\b`, 'gi');
+        const regex = new RegExp(`\\b${word}\\b`, 'g');
         modifiedText = modifiedText.replace(regex, '');
     });
 
@@ -57,80 +57,50 @@ function replaceWords() {
     const wordToReplace = wordToReplaceInput.value;
     const replacementWord = replacementWordInput.value;
   
-    const modifiedText = inputText.replace(new RegExp(wordToReplace, 'gi'), replacementWord);
+    const modifiedText = inputText.replace(new RegExp(wordToReplace, 'g'), replacementWord);
     outputTextArea.value = modifiedText;
   }
 
-  let speechUtterance;
-  let isPaused = false;
+let speechUtterance;
   
-  function toggleSpeech() {
-    const textArea = document.getElementById('textArea');
-    const readButton = document.getElementById('readButton');
-    const pauseButton = document.getElementById('pauseButton');
-    const resumeButton = document.getElementById('resumeButton');
-    const volumeControl = document.getElementById('volumeControl');
+function toggleSpeech() {
+  const textArea = document.getElementById('textArea');
+  const readButton = document.getElementById('readButton');
+  const volumeControl = document.getElementById('volumeControl');
   
-    if (!speechUtterance || speechUtterance.text !== textArea.value) {
-      speechUtterance = new SpeechSynthesisUtterance(textArea.value);
-    }
-  
-    if (isPaused) {
-      speechSynthesis.resume();
-      isPaused = false;
-      pauseButton.style.display = 'block';
-      resumeButton.style.display = 'none';
-    } else {
-      speechSynthesis.speak(speechUtterance);
-      pauseButton.style.display = 'block';
-      resumeButton.style.display = 'none';
-    }
-  
-    readButton.style.display = 'none';
-    textArea.disabled = true;
-  
-    speechUtterance.onend = () => {
-      readButton.style.display = 'block';
-      pauseButton.style.display = 'none';
-      resumeButton.style.display = 'none';
-      textArea.disabled = false;
-    };
-  
-    speechUtterance.onerror = () => {
-      readButton.style.display = 'block';
-      pauseButton.style.display = 'none';
-      resumeButton.style.display = 'none';
-      textArea.disabled = false;
-    };
-  
-    speechUtterance.volume = volumeControl.value;
+  if (!speechUtterance || speechUtterance.text !== textArea.value) {
+    speechUtterance = new SpeechSynthesisUtterance(textArea.value);
   }
   
-  function pauseSpeech() {
-    speechSynthesis.pause();
-    isPaused = true;
-    document.getElementById('pauseButton').style.display = 'none';
-    document.getElementById('resumeButton').style.display = 'block';
+  speechSynthesis.speak(speechUtterance);
+  readButton.style.display = 'none';
+  textArea.disabled = true;
+  
+  speechUtterance.onend = () => {
+    readButton.style.display = 'block';
+    textArea.disabled = false;
+  };
+  
+  speechUtterance.onerror = () => {
+    readButton.style.display = 'block';
+    textArea.disabled = false;
+  };
+  
+  speechUtterance.volume = volumeControl.value;
+}
+  
+document.getElementById('volumeControl').addEventListener('input', () => {
+  if (speechUtterance) {
+    speechUtterance.volume = document.getElementById('volumeControl').value;
   }
-  
-  function resumeSpeech() {
-    speechSynthesis.resume();
-    isPaused = false;
-    document.getElementById('pauseButton').style.display = 'block';
-    document.getElementById('resumeButton').style.display = 'none';
+});
+
+window.addEventListener('beforeunload', () => {
+  if (speechSynthesis) {
+    speechSynthesis.cancel();
   }
-  
-  document.getElementById('volumeControl').addEventListener('input', () => {
-    if (speechUtterance) {
-      speechUtterance.volume = document.getElementById('volumeControl').value;
-    }
-  });
-  
-  window.addEventListener('beforeunload', () => {
-    if (speechSynthesis) {
-      speechSynthesis.cancel();
-    }
-  });
+});
+
   
   
   

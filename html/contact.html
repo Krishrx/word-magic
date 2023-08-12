@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Word Magic-Contact Us</title>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
+    </script>
 <script type="text/javascript">
    (function(){
       emailjs.init("MzWvQQBeSdeIeUMCg");
@@ -87,11 +87,11 @@
           emailjs.send('service_yvt2yum', 'template_vkgy9qy', formData)
             .then(function(response) {
               console.log('SUCCESS!', response.status, response.text);
-              alert('Form data submitted successfully!');
+              alert('Response Sent Successfully!');
               document.getElementById('contactForm').reset(); 
             }, function(error) {
               console.log('FAILED...', error);
-              alert('Form data submission failed. Please try again.');
+              alert("Oops!! Something Went Wrong.Please try again later.");
             });
         });
       </script>
