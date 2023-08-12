@@ -302,5 +302,39 @@ body{
     justify-content: center;
   }
   
+  @media screen and (min-width: 769px) {
+    #menu-btn,#close-btn {
+        display: none;
+    }
+    .nav-pc {
+      position: static;
+      color: white;
+      left: -80%;
+      background: none;
+      width: 100%;
+      background-color: #252525;
+      overflow-x: hidden;
+      margin-bottom: 40px;
+    }
+     #navList {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      margin-left: 10px;
+    }
+    .nav li{
+      margin: 0px;
+      padding: 0;
+    }
+    .nav a{
+      margin: 10px;
+      padding: 15px;
+    }
+    .nav-pc li:hover{
+      color: black;
+      background-color: white;
+    }
+    
+    
+}
 
-  
