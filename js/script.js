@@ -1,6 +1,5 @@
 const currentPath = window.location.pathname;
   const navItems = document.querySelectorAll('.nav li a');
-  console.log(currentPath)
   for (const navItem of navItems) {
       if (navItem.getAttribute('href') === currentPath) {
           navItem.parentElement.classList.add('current-page');
