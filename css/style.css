@@ -59,7 +59,7 @@ body{
   .nav {
     width: 80%;
     height: 100%;
-    background-color: #000000;
+    background-color: #252525;
     color: white;
     position: fixed; 
     left: -80%; 
@@ -77,8 +77,8 @@ body{
   }
   
   .nav li:hover{
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: #333;
   }
   
   .nav.active {
@@ -261,6 +261,22 @@ body{
     margin: 0 10px;
   }
 
+  #readButton{
+    color: white;
+    background-color:#ff3737;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: #ff3737;
+    cursor: pointer;
+  }
+
+  #readButton:hover{
+    background-color: greenyellow;
+    border-color: greenyellow;
+    color: black;
+    font-weight: bold;
+  }
+
 .contactUs{
     margin: 20px;
     padding: 20px;
@@ -331,10 +347,13 @@ body{
       padding: 15px;
     }
     .nav-pc li:hover{
-      color: black;
-      background-color: white;
-    }
-    
-    
+      color: rgb(255, 255, 255);
+      background-color: #333;
+    } 
+}
+
+.current-page{
+  color: black;
+  background-color: rgb(220, 220, 220);
 }
 
