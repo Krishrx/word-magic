@@ -1,3 +1,14 @@
+const currentPath = window.location.pathname;
+  const navItems = document.querySelectorAll('.nav li a');
+  for (const navItem of navItems) {
+      if (navItem.getAttribute('href') === currentPath) {
+          navItem.parentElement.classList.add('current-page');
+          break;
+      }
+  }
+
+
+
 const menu = document.getElementById('menu-btn');
 const close = document.getElementById('close-btn');
 const nav = document.getElementById('navBar');
@@ -102,7 +113,8 @@ window.addEventListener('beforeunload', () => {
 });
 
   
-  
+
+
   
 
 
