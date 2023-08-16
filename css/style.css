@@ -166,17 +166,15 @@ body{
   }
 
   .readPara button,.removeWordsResult button:hover{
-    background-color: greenyellow;
-    border-color: greenyellow;
-    color: black;
-    font-weight: bold;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
   }
 
    .box div button:hover{
-    background-color: greenyellow;
-    border-color: greenyellow;
-    color: black;
-    font-weight: bold;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
   } 
   
 .footer i{
@@ -271,10 +269,9 @@ body{
   }
 
   #readButton:hover{
-    background-color: greenyellow;
-    border-color: greenyellow;
-    color: black;
-    font-weight: bold;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: white;
   }
 
 .contactUs{
@@ -304,10 +301,9 @@ body{
   }
 
 #contact-submit:hover{
-    background-color: greenyellow;
-    border-color: greenyellow;
-    color: black;
-    font-weight: bold;
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: white;
   }
 
 
